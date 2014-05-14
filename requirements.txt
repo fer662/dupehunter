@@ -1,0 +1,2 @@
+facebook-sdk==1.0.0-alpha
+pHash==0.1
