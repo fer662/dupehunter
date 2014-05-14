@@ -28,3 +28,8 @@ The most common way you get impersonated is by someone using a profile with your
 likely there's a lot of people with your same name in Facebook, so comparing that is not an option. This script will compare
 all profiles matching your name and will look for a profile picture matching ANY of the pictures you ever used as profile
 picture. You will be alerted if anyone's picture closely resemble any of yours.
+
+Donations
+=========
+
+BTC: 15USUofa6QZ6KpYRNSwiUBxGXKRqakpCYX
