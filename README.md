@@ -8,18 +8,18 @@ Requirements
 
 To properly work, dupehunter needs:
 
-1)python 2.x (https://www.python.org/)
-2)pHash (Open Source perceptual hash library, http://phash.org/download/) 
-3)py-pHash (Python bindings for libpHash, https://github.com/polachok/py-phash)
-4)Facebook python SDK (https://github.com/pythonforfacebook/facebook-sdk)
-5)A facebook access token with the "user_photos" permission (can be grabbed from https://developers.facebook.com/tools/explorer/)
+- python 2.x (https://www.python.org/)
+- pHash (Open Source perceptual hash library, http://phash.org/download/)
+- py-pHash (Python bindings for libpHash, https://github.com/polachok/py-phash)
+- Facebook python SDK (https://github.com/pythonforfacebook/facebook-sdk)
+- A facebook access token with the "user_photos" permission (can be grabbed from https://developers.facebook.com/tools/explorer/)
 
 Instructions
 ============
 
-1)Replace FACEBOOK_OAUTH_TOKEN with an actual token within the script
-2)Run the script
-3)Profit!
+- Replace FACEBOOK_OAUTH_TOKEN with an actual token within the script
+- Run the script
+- Profit!
 
 What does it do
 ===============
