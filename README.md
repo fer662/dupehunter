@@ -21,8 +21,8 @@ Instructions
 - Run the script
 - Profit!
 
-What does it do
-===============
+What does it do?
+================
 
 The most common way you get impersonated is by someone using a profile with your name and profile picture. However, it's very
 likely there's a lot of people with your same name in Facebook, so comparing that is not an option. This script will compare

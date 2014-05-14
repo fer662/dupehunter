@@ -12,6 +12,7 @@ import facebook
 
 FACEBOOK_OAUTH_TOKEN = "INSERT_YOUR_OAUTH_TOKEN_HERE"
 
+DEBUG = False
 #####################################################################
 
 graph = facebook.GraphAPI(FACEBOOK_OAUTH_TOKEN)
@@ -22,6 +23,7 @@ albums = graph.request("me/albums")
 
 compare_photos = []
 compare_hashes = []
+compare_count = 0
 
 print "Obtaining profile pictures for %s..." % (profile["name"])
 for album in albums["data"]:
@@ -37,16 +39,18 @@ for album in albums["data"]:
 
 response = graph.request("search",{"q":profile["name"], "fields":"id,name,picture", "type":"user"})
 next = response["paging"]["next"].replace("https://graph.facebook.com/v1.0/", "")
+
+print "Hunt commencing!"
 while next:
 	for user in response["data"]:
 		urllib.urlretrieve(user["picture"]["data"]["url"], "compared.jpg");
 		compared_hash = pHash.imagehash("compared.jpg")
-
+		compare_count += 1
 		for compare_hash in compare_hashes:	
 			hamming_distance = pHash.hamming_distance( compare_hash, compared_hash )
 			if hamming_distance < 8:
 				print 'Potential scammer: http://graph.facebook.com/%s Hamming distance: %d (%08x / %08x)' % (user["id"], hamming_distance, compare_hash, compared_hash)
-			else:
+			elif DEBUG:
 				print 'http://graph.facebook.com/%s Hamming distance: %d' % (user["id"], hamming_distance)
 
 		response = graph.request(next)
@@ -54,5 +58,7 @@ while next:
 		next = response["paging"]["next"].replace("https://graph.facebook.com/v1.0/", "")
 	else:
 		next = None
+
+print "Compared %d profiles!" % (compare_count)
 	
 	
